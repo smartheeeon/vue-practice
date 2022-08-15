@@ -1,0 +1,36 @@
+<template>
+  <div>
+    <h2>총 적금 : {{ totalMoney }}</h2>
+    <button @click="addMoney(1000)">1000</button>
+    <button @click="addMoney(2000)">2000</button>
+    <button @click="addMoney(3000)">3000</button>
+    <button @click="addMoney(4000)">4000</button>
+    <button @click="addMoney(5000)">5000</button>
+  </div>
+</template>
+
+<script>
+import useMoney from "@/composables/useMoney";
+export default {
+  name: "savingStatus",
+  setup() {
+    const { addMoney, totalMoney } = useMoney(5000);
+
+    return {
+      addMoney,
+      totalMoney,
+    };
+  },
+};
+// import moneyMixins from "@/mixins/moneyMixins";
+// export default {
+//   name: "feeStatus",
+//   mixins: [moneyMixins],
+//   data() {
+//     return {};
+//   },
+//   methods: {},
+// };
+</script>
+
+<style></style>
